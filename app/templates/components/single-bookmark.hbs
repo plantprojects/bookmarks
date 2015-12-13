@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="medium-10 columns">
+        <div class="media-object-section">
+            <div class="thumbnail">
+                <a target="_blank" href="{{bookmark.url}}"><img src= "{{bookmark.thumbnail}}"></a>
+            </div>
+        </div>
+        <div class="media-object-section">
+            <h4><a target="_blank" href="{{bookmark.url}}">{{bookmark.title}}</a></h4>
+            <p>{{bookmark.description}}</p>
+            {{#each bookmarkCategories as |category|}}
+                {{category.name}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="medium-2 columns">
+        <button {{action "saveBookmark" movie}}>Save</button>
+        <button {{action "deleteBookmark" movie}}>Delete</button>
+    </div>
+</div>
+{{yield}}

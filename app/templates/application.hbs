@@ -1,8 +1,16 @@
-<div class="container">
-    <div class="row">
-        <div class="small-12 columns">
-            <h1 id="title">Bookmarks</h1>
-            {{outlet}}
-        </div>
-    </div>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">{{link-to 'Bookmarks' 'bookmarks'}}</li>
+      <li>{{link-to 'Categories' 'categories'}}</li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
 </div>
+
+{{outlet}}

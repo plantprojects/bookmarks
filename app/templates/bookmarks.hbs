@@ -1,15 +1,21 @@
-{{#each model.data.bookmarks as |bookmark|}}
-    <div class="media-object stack-for-small">
-        <div class="media-object-section">
-            <div class="thumbnail">
-                <a target="_blank" href="{{bookmark.url}}"><img src= "{{bookmark.thumbnail}}"></a>
-            </div>
-        </div>
-        <div class="media-object-section">
-            <h4><a target="_blank" href="{{bookmark.url}}">{{bookmark.title}}</a></h4>
-            <p>{{bookmark.description}}</p>
+{{#bookmark-list}}
+<section>
+    <div class="row">
+        <div class="small-12 columns">
+            {{#each model.categories as |category|}}
+                {{single-category category=category}}
+            {{/each}}
         </div>
     </div>
-{{/each}}
-
+</section>
+<section>
+    <div class="row">
+        <div class="small-12 columns">
+            {{#each model.bookmarks as |bookmark|}}
+                {{single-bookmark bookmark=bookmark deleteBookmark="deleteBookmark" updateBookmark="updateBookmark" categories=model.categories}}
+            {{/each}}
+        </div>
+    </div>
+</section>
+{{/bookmark-list}}
 {{outlet}}

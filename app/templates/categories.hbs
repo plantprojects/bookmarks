@@ -1,0 +1,13 @@
+<section>
+    <div class="row">
+        <div class="small-12 columns">
+            <h1>Categories</h1>
+
+            {{#each model.categories as |category|}}
+                {{single-category category=category}}
+            {{/each}}
+
+            {{outlet}}
+        </div>
+    </div>
+</section>
